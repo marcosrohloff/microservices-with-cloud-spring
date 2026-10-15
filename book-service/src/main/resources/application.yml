@@ -1,0 +1,54 @@
+server:
+  port: 8100
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka}
+resilience4j:
+  rate limiter:
+    instances:
+      default:
+        limitForPeriod:  2
+        limitRefreshPeriod: 10s
+  bulkhead:
+    instances:
+      default:
+        maxConcurrentCalls: 10
+      foo-bar:
+        maxConcurrentCalls: 20
+  retry:
+    instances:
+      foo-bar:
+        maxAttempts: 7
+        waitDuration: 1s
+        enableExponentialBackoff: true
+spring:
+  application:
+    name: book-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book_service?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+    format-sql: false
+    open-in-view: false
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
+  zipkin:
+    base-url: ${SPRING_ZIPKIN_BASE_URL:http://localhost:9411}
+
+springdoc:
+    api-docs:
+      path: /book-service/v3/api-docs
+    swagger-ui:
+      url: /book-service/v3/api-docs
+    override-server-url: true
