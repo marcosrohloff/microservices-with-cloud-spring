@@ -1,8 +1,0 @@
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/Startup.java
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/config/OpenApiConfiguration.java
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/config/WebConfig.java
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/config/ZipkinCustomSenderConfig.java
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/controller/ExchangeController.java
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/enviroment/InstanceInformationService.java
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/model/Exchange.java
-/home/marcos/IdeaProjects/exchange-service/src/main/java/br/com/erudio/repository/ExchangeRepository.java
